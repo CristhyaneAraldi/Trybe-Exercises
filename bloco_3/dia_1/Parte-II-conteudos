@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML</title>
+  </head>
+  <body>
+    <h1>Exercícios</h1>
+    <p>Estudantes trybe turma 14 tribo A</p>
+    <ul>
+    <li>Cris</li>
+    <li>Carla</li>
+    <li>Mari</li>
+    <li>Jéssica</li>
+    <li>Amanda</li>
+    </ul>
+    <img src="https://freecourse.betrybe.com/images/trybe-logo-e10dbaaa26462aa149b81a924b00df07.png?vsn=d width="400px">
+
+  </body>
+</html>
