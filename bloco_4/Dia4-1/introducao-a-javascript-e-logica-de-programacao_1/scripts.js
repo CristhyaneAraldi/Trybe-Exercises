@@ -49,14 +49,16 @@ let angulo3 = 70;
 
 if(angulo1 + angulo2 + angulo3 === 180){
   console.log("true")
+} else if (angulo1 < 0 || angulo2 < 0 || angulo3 < 0) {
+  console.log("ângulo inválido")
 } else {
   console.log("false")
 }
 
 //exercise 6
-let chessPiece = "bishop";
+let chessPiece = "BISHOP";
 
-switch(chessPiece){
+switch(chessPiece.toLowerCase()){
   case "king":
     console.log("horizontal, vertical and diagonal")
     break;
@@ -67,7 +69,7 @@ switch(chessPiece){
     console.log("diagonal")
     break;
   default:
-    console.log("unidentified piece")
+    console.log("invalid piece")
 }
 
 //exercise 7
@@ -110,3 +112,47 @@ if(num1 % 2 !== 0 || num2 % 2 !== 0 || num3 % 2 !== 0){
 } else {
   console.log("false")
 }
+
+//exercise 10
+let custo = 4.50;
+let valorVenda = 10.00;
+
+if (custo > 0 || valorVenda > 0) {
+  let custoTotal = custo * 1.2
+  let lucroFinal = (valorVenda - custoTotal) * 1000
+  console.log(lucroFinal)
+} else {
+  console.log("Erro ao inserir valores: valor inserido é menor que zero")
+}
+
+//exercise 11
+let salario = 3000.00;
+let aliquotaINSS;
+let aliquotaIR;
+
+if (salario <= 1556.94) {
+  aliquotaINSS = salario * 0.08;
+} else if (salario <= 2594.92) {
+  aliquotaINSS = salario * 0.09;
+} else if (salario <= 5189.32) {
+  aliquotaINSS = salario * 0.11;
+} else {
+  aliquotaINSS = 570.88
+}
+
+let salarioBase = salario - aliquotaINSS;
+
+if (salarioBase <= 1903.98) {
+  aliquotaIR = 0;
+} else if (salarioBase <= 2826.65) {
+  aliquotaIR = (salarioBase * 0.075) - 142.80;
+} else if (salarioBase <= 3751.05) {
+  aliquotaIR = (salarioBase) * 0.15 - 354.80;
+} else if (salarioBase <= 4664.68) {
+  aliquotaIR = (salarioBase) * 0.225 - 636.13;
+} else {
+  aliquotaIR = (salarioBase * 0.275) - 869.36;
+}
+
+salarioLiquido = salarioBase - aliquotaIR;
+console.log(salarioLiquido);
