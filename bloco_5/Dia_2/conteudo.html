@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div id="paiDoPai">
+    <div id="pai">
+      <div id="primeiroFilho"></div>
+      <div id="elementoOndeVoceEsta">
+        <div id="primeiroFilhoDoFilho"></div>
+        <div id="segundoEUltimoFilhoDoFilho"></div>
+      </div>
+      Atenção!
+      <div id="terceiroFilho"></div>
+      <div id="quartoEUltimoFilho"></div>
+    </div>
+  </div>
+  <script>
+    // 1. Acesse o elemento elementoOndeVoceEsta.
+    let elementoOndeVoceEsta = document.getElementById('elementoOndeVoceEsta');
+
+    // 2. Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele.
+    let pai = elementoOndeVoceEsta.parentElement;
+    pai.style.color = 'red';
+
+    // 3. Acesse o primeiroFilhoDoFilho e adicione um texto a ele.
+    // Você se lembra dos vídeos da aula anterior, como fazer isso?
+    let primeiroFilhoDoFilho = elementoOndeVoceEsta.firstElementChild;
+    primeiroFilhoDoFilho.innerText = 'Bloco 5 dia 5.1 | Trybe';
+    //document.querySelector('#primeiroFilhoDoFilho').innerText = 'Bloco 5 dia 5.1 | Trybe'
+
+    // 4. Acesse o primeiroFilho a partir de pai.
+    let primeiroFilho = pai.firstElementChild;
+    //document.querySelector('#pai').firstElementChild
+
+    // 5. Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta.
+    let primeiroFilho2 = elementoOndeVoceEsta.previousElementSibling;
+    
+    // 6. Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta.
+    let textElement = elementoOndeVoceEsta.nextSibling;
+
+    // 7. Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta.
+    let terceiroFilho = elementoOndeVoceEsta.nextElementSibling;
+
+    // 8. Agora acesse o terceiroFilho a partir de pai.
+    let terceiroFilho2 = pai.lastElementChild.previousElementSibling;
+    
+
+    //Parte 2 - Criando elementos
+
+    // 1.Crie um irmão para elementoOndeVoceEsta
+    let pai = document.getElementById('pai');
+    let irmaoElementoOndeVoceEsta = document.createElement('div');
+    irmaoElementoOndeVoceEsta.id = 'irmaoElementoOndeVoceEsta';
+    pai.appendChild(irmaoElementoOndeVoceEsta);
+    
+    // 2.Crie um filho para elementoOndeVoceEsta
+    let elementoOndeVoceEsta = document.getElementById('elementoOndeVoceEsta');
+    let filhoElementoOndeVoceEsta = document.createElement('div');
+    filhoElementoOndeVoceEsta.id = 'filhoElementoOndeVoceEsta';
+    elementoOndeVoceEsta.appendChild(filhoElementoOndeVoceEsta);
+
+    // 3.Crie um filho para primeiroFilhoDoFilho
+    let primeiroFilhoDoFilho = document.getElementById('primeiroFilhoDoFilho')
+    let filhoPrimeiroFilhoDoFilho = document.createElement('div');
+    filhoPrimeiroFilhoDoFilho.id = 'filhoPrimeiroFilhoDoFilho';
+    primeiroFilhoDoFilho.appendChild(filhoPrimeiroFilhoDoFilho);
+
+    // 4.A partir desse filho criado, acesse terceiroFilho
+    let terceiroFilho = filhoPrimeiroFilhoDoFilho
+      .parentElement // primeiroFilhoDoFilho
+      .parentElement // elementoOndeVoceEsta
+      .nextElementSibling; // terceiroFilho
+    console.log(terceiroFilho);
+
+  </script>
+    
+</body>
+</html>
