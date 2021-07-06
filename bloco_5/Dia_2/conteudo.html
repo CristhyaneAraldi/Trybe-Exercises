@@ -20,11 +20,36 @@
     </div>
   </div>
   <script>
-    document.querySelector('#elementoOndeVoceEsta');
-    document.querySelector('#elementoOndeVoceEsta').parentNode.style.color = 'red';
-    document.querySelector('#primeiroFilhoDoFilho').innerText = 'Bloco 5 dia 5.1 | Trybe'
-    document.querySelector('#pai').firstElementChild
-    document.querySelector('#elementoOndeVoceEsta').parentElement;
-</script>
+    // 1. Acesse o elemento elementoOndeVoceEsta.
+    let elementoOndeVoceEsta = document.getElementById('elementoOndeVoceEsta');
+
+    // 2. Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele.
+   let pai = elementoOndeVoceEsta.parentElement;
+    pai.style.color = 'red';
+
+    // 3. Acesse o primeiroFilhoDoFilho e adicione um texto a ele.
+    // Você se lembra dos vídeos da aula anterior, como fazer isso?
+    let primeiroFilhoDoFilho = elementoOndeVoceEsta.firstElementChild;
+    primeiroFilhoDoFilho.innerText = 'Bloco 5 dia 5.1 | Trybe';
+    //document.querySelector('#primeiroFilhoDoFilho').innerText = 'Bloco 5 dia 5.1 | Trybe'
+
+    // 4. Acesse o primeiroFilho a partir de pai.
+    let primeiroFilho = pai.firstElementChild;
+    //document.querySelector('#pai').firstElementChild
+
+    // 5. Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta.
+    let primeiroFilho2 = elementoOndeVoceEsta.previousElementSibling;
+    
+    // 6. Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta.
+    let textElement = elementoOndeVoceEsta.nextSibling;
+
+    // 7. Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta.
+    let terceiroFilho = elementoOndeVoceEsta.nextElementSibling;
+
+    // 8. Agora acesse o terceiroFilho a partir de pai.
+    let terceiroFilho2 = pai.lastElementChild.previousElementSibling;
+    
+  </script>
+    
 </body>
 </html>

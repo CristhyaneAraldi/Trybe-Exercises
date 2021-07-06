@@ -58,19 +58,19 @@
   <body>
     <script>
       //exercício 1 - Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body
-      let titulo = document.createElement('h1');
-      titulo.innerText = 'Exercício 5.2 - JavaScript DOM';
-      document.body.appendChild(titulo);
+      let h1 = document.createElement('h1');
+      h1.innerText = 'Exercício 5.2 - JavaScript DOM';
+      document.body.appendChild(h1);
 
       //exercício 2 - Adicione a tag div com a classe main-content como filho da tag body
       let div1 = document.createElement('div');
-      div1.className = 'main-content';
+      div1.classList.add('main-content')
       document.body.appendChild(div1);
-      //outra solução classe: div1.classList.add('main-content');
+      //outra solução classe: div1.className = 'main-content';
 
       //exercício 3 - Adicione a tag div com a classe center-content como filho da tag div criada no passo 2
       let div2 = document.createElement('div');
-      div2.className = 'center-content';
+      div2.classList.add('center-content');
       document.querySelector('.main-content').appendChild(div2);
       //outra opção: div1.appendChild(div2);
 
@@ -82,26 +82,26 @@
 
       //exercício 5 - Adicione a tag div com a classe left-content como filho da tag div criada no passo 2
       let div3 = document.createElement('div');
-      div3.className = 'left-content';
+      div3.classList.add('left-content');
       document.querySelector('.main-content').appendChild(div3);
       //opção 2: div1.appendChild(div3);
 
       //exercício 6 - Adicione a tag div com a classe right-content como filho da tag div criada no passo 2
-      let div4 = document.createElement('div');
-      div4.className = 'right-content';
-      document.querySelector('.main-content').appendChild(div4);
+      let rightContent = document.createElement('div');
+      rightContent.className = 'right-content';
+      document.querySelector('.main-content').appendChild(rightContent);
       //outras opções:
-      //div4.classList.add('right-content');
-      //div1.appendChild(div4);
+      //rightContent.classList.add('right-content');
+      //div1.appendChild(rightContent);
 
       //exercício 7 - Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5
       let img = document.createElement('img');
       img.src = 'https://picsum.photos/200';
-      img.className = 'small-image';
-      document.querySelector('.left-content').appendChild(img);
+      img.classList.add('small-image');
+      div3.appendChild(img);
       //outras opções:
       //img.classList.add('small-image');
-      //left-content.appendChild(img);
+      //document.querySelector('.left-content').appendChild(img);
       
       //exercício 8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6
       let ul = document.createElement('ul');
@@ -113,21 +113,22 @@
         ul.appendChild(li);
       //ou: document.querySelector('ul').appendChild(li);
       }
-      div4.appendChild(ul);
-         
- 
-      //exercício 9 - Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2
+      rightContent.appendChild(ul);
+      
+       //exercício 9 - Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2
       for (let index = 0; index < 3; index += 1) {
         let h3 = document.createElement('h3');
         h3.innerText = 'Título ' + index;
         div1.appendChild(h3);
       }
+
       
       //Segunda Parte
 
       //1 - Adicione a classe title na tag h1 criada
-      let title = document.querySelector('h1');
+      const title = document.querySelector('h1');
       title.className = 'title';
+      //h1.classList.add('title'); (pq não funciona se variável já está criada?)
       
       //2 - Adicione a classe description nas 3 tags h3 criadas
       let elementosH3 = document.querySelector('h3');
@@ -137,7 +138,7 @@
 
       //3 - Remova o div criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild()
       let divLeftContent = document.querySelector('.left-content');
-      div2.removeChild(divLeftContent);
+      elementDivMain.removeChild(divLeftContent);
 
       //4 - Centralize o div criado no passo 6 (aquele que possui a classe right-content ). Dica: para centralizar, basta configurar o margin-right: auto do div
       let divRightContent = document.querySelector('.right-content');
