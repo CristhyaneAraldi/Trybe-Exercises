@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: rgb(49, 52, 55);
+}
+
+body {
+  background-color:ghostwhite;
+}
+
+header {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.formulario {
+  width: 80%;
+  margin: 15px auto;
+  padding: 30px;
+}
+
+.campoDados {
+  padding: 20px;
+  background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+}
+
+.campoDados input[type="text"] {
+  width: 100%;
+  padding: 3px;
+}
+
+.campoDados input[type="email"] {
+  width: 100%;
+  padding: 3px;
+}
+
+#estado {
+  width: 20%;
+  padding: 3px;
+}
+
+.campoEmprego {
+  padding: 20px;
+  background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+}
+
+.campoEmprego input[type="text"] {
+  width: 100%;
+  padding: 3px;
+}
+
+#curriculo {
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+.botoes {
+  text-align: center;
+}
+
+button {
+  background-color: rgb(230, 230, 230);
+  width: 200px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+}
