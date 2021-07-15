@@ -28,14 +28,17 @@ header {
 
 .campoDados input[type="text"] {
   width: 100%;
+  padding: 3px;
 }
 
 .campoDados input[type="email"] {
   width: 100%;
+  padding: 3px;
 }
 
 #estado {
   width: 20%;
+  padding: 3px;
 }
 
 .campoEmprego {
@@ -46,10 +49,15 @@ header {
 
 .campoEmprego input[type="text"] {
   width: 100%;
+  padding: 3px;
 }
 
 #curriculo {
   width: 100%;
+}
+
+textarea {
+  resize: none;
 }
 
 .botoes {
