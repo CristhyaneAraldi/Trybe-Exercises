@@ -5,6 +5,10 @@
   color: rgb(49, 52, 55);
 }
 
+body {
+  background-color:ghostwhite;
+}
+
 header {
   margin-top: 50px;
   text-align: center;
@@ -19,11 +23,33 @@ header {
 .campoDados {
   padding: 20px;
   background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+}
+
+.campoDados input[type="text"] {
+  width: 100%;
+}
+
+.campoDados input[type="email"] {
+  width: 100%;
+}
+
+#estado {
+  width: 20%;
 }
 
 .campoEmprego {
   padding: 20px;
   background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+}
+
+.campoEmprego input[type="text"] {
+  width: 100%;
+}
+
+#curriculo {
+  width: 100%;
 }
 
 .botoes {
@@ -35,41 +61,5 @@ button {
   width: 200px;
   padding: 5px;
   margin: 5px;
-}
-
-#full-name {
-  width: 91%;
-}
-
-#cpf {
-  width: 92%;
-}
-
-#email {
-  width: 91%;
-}
-
-#endereco {
-  width: 89%;
-}
-
-#cidade {
-  width: 56%;
-  margin-right: 15px;
-}
-
-#estado {
-  width: 27%;
-}
-
-#curriculo {
-  width: 97%;
-}
-
-#cargo {
-  width: 92%;
-}
-
-#descricao {
-  width: 83%;
+  border-radius: 3px;
 }
