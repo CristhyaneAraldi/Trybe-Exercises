@@ -8,22 +8,14 @@ html {
   font-family: sans-serif;
 }
 
-.container {
-  display: flex;
-}
-
-header {
-  text-transform: uppercase;
-}
-
-@media screen and (max-width: 600px) {
   body {
     background-color: rgb(162, 209, 162);
   }
 
   .container {
+    display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
+   /*  flex-wrap: wrap; */
   }
 
   header {
@@ -32,17 +24,14 @@ header {
     color:ghostwhite;
     font-weight: bold;
     text-align: center;
-  }
-
-  header nav {
-    display: none;
+    text-transform: uppercase;
   }
 
   aside {
     justify-content: center;
   }
 
-  li {
+  aside li {
     padding: 0 8%;
     line-height: 20px;
   }
@@ -80,4 +69,35 @@ header {
     font-size: 0.7em;
   }
 
+@media screen and (max-width: 600px) {
+  header nav {
+    display: none;
+  }
 }
+
+@media screen and (min-width: 600px) {
+  header {
+    font-size: 1.3em;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  header nav {
+    text-transform: lowercase;
+  }
+
+  header li {
+    list-style: none;
+  }
+
+  .aside {
+    flex-wrap: nowrap;
+  }
+
+  h2 {
+    text-align: left;
+  }
+}
+
+
+
