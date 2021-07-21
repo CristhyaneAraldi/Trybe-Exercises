@@ -1,0 +1,59 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.2em;
+  margin: 0 3%;
+}
+
+h1 {
+  font-size: 1.4em;
+}
+
+h2 {
+ font-size: 1.2em;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 25px 0;
+  padding: 10px;
+  background: rgb(17, 17, 17);
+  color: antiquewhite;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* primeiro breakpoint: */
+@media screen and (min-width: 700px) {
+  body {
+    background-color: darkseagreen;
+    font-size: 1.4em;
+    margin: 50px 7%;
+  }
+
+  figure {
+    display: inline-block;
+    width: 45%;
+  }
+}
+
+/* segundo breakpoint: */
+@media screen and (min-width: 1050px) {
+  body {
+    background-color: grey;
+    font-size: 1.5em;
+    margin: 60px 10%;
+    max-width: 1130px;
+  }
+
+  figure {
+    width: 35%;
+    margin: 25px 40px;
+  }
+  
+}
