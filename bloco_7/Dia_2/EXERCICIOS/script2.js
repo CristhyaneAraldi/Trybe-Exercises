@@ -36,3 +36,14 @@ console.log(addWorkShift(lesson2, 'turno', 'manhã')); */
 // Crie uma função para listar as keys de um objeto. Essa função deve receber um objeto como parâmetro.
 const listKeys = obj =>  Object.keys(obj);
 console.log(listKeys(lesson1));
+
+// Exercício 3
+// Crie uma função para mostrar o tamanho de um objeto.
+const objSize = obj => Object.keys(obj).length;
+console.log(objSize(lesson1));
+
+// Exercício 4
+// Crie uma função para listar os valores de um objeto. Essa função deve receber um objeto como parâmetro.
+const objValues = obj => Object.values(obj);
+console.log(objValues(lesson1));
+
