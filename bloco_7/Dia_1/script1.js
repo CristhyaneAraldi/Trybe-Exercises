@@ -66,7 +66,7 @@ const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 oddsAndEvens.sort();
 
 console.log(oddsAndEvens); 
-// [ 10, 13, 2, 3, 4, 7 ] devido a  pontuação de código unicode.
+// [ 10, 13, 2, 3, 4, 7 ] devido a  pontuação de código unicode (compara como se fossem strings)
 
 // retornar ordenada
 const oddsAndEvens = [13, 3, 4, 10, 7, 2];
@@ -82,3 +82,8 @@ let oddsAndEvens = [13, 3, 4, 10, 7, 2];
 oddsAndEvens.sort((a, b) => a - b);
 
 console.log(oddsAndEvens);
+
+// em 1 linha
+const oddsAndEvens = [13, 3, 4, 10, 7, 2];
+
+console.log(`Os números ${oddsAndEvens.sort((a, b) => a - b)} se encontram ordenados de forma crescente !`);
