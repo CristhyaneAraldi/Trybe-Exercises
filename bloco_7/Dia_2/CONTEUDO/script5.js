@@ -81,3 +81,16 @@ const newPerson = Object.assign({},person,lastName);
 newPerson.name = 'Gilberto';
 console.log(newPerson);
 console.log(person);
+
+// form de exercicios
+const band = {
+  name: 'Blind Guardian',
+  formedIn: 1986,
+  lastAlbum: 'Beyond the Red Mirror',
+};
+
+const info = {
+  genre: 'Power Metal',
+  lastAlbum: 'Twilight Orchestra: Legacy of the Dark Lands',
+};
+console.log(Object.assign(band, info));
