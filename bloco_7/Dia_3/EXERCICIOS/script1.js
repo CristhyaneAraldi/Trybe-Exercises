@@ -11,4 +11,4 @@ function sum(a, b) {
   return a + b;
 }
 
-// implemente seus testes aqui
+// Teste se o retorno de sum(4, 5) é 9
