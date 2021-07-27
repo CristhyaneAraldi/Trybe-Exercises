@@ -1,7 +1,0 @@
-Unix
-Bash
-Git
-trybe-skills-updates
-JavaScript
-HTML
-CSS
