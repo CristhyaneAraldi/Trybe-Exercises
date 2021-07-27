@@ -8,11 +8,11 @@ PROGRAMA DE FORMAÇÃO
 
 - MÓDULO 1: Fundamentos do Desenvolvimento Web:
 
-*Bloco 1: Unix & Bash
-*Bloco 2: Git, GitHub e Internet
-*Bloco 3: Introdução à HTML e CSS
-*Bloco 4: Intrdução à JavaScript e Lógica de Programação
-*Bloco 5: JavaScript: DOM, Eventos e Web Storage
+- Bloco 1: Unix & Bash
+- Bloco 2: Git, GitHub e Internet
+- Bloco 3: Introdução à HTML e CSS
+- Bloco 4: Intrdução à JavaScript e Lógica de Programação
+- Bloco 5: JavaScript: DOM, Eventos e Web Storage
 
 
 - MÓDULO 2: Desenvolvimento Front-end:
