@@ -6,16 +6,21 @@ TRYBE
 PROGRAMA DE FORMAÇÃO
 
 
-- MÓDULO 1: Fundamentos do Desenvolvimento Web:
+MÓDULO 1: Fundamentos do Desenvolvimento Web:
 
-- Bloco 1: Unix & Bash
-- Bloco 2: Git, GitHub e Internet
-- Bloco 3: Introdução à HTML e CSS
-- Bloco 4: Intrdução à JavaScript e Lógica de Programação
-- Bloco 5: JavaScript: DOM, Eventos e Web Storage
+- Bloco 01: Unix & Bash
+- Bloco 02: Git, GitHub e Internet
+- Bloco 03: Introdução à HTML e CSS
+- Bloco 04: Intrdução à JavaScript e Lógica de Programação
+- Bloco 05: JavaScript: DOM, Eventos e Web Storage
+- Bloco 06: HTML e CSS: Forms, Flexbox e Responsivo
+- Bloco 07: Introdução à JavaScript ES6 e Testes Unitários
+- Bloco 08: Higher Order Functions do JavaScript ES6
+- Bloco 09: JavaScript Assíncrono e Promises
+- Bloco 10: Testes automatizados com Jest
 
 
-- MÓDULO 2: Desenvolvimento Front-end:
+MÓDULO 2: Desenvolvimento Front-end:
 
 HTML
 CSS
@@ -23,7 +28,7 @@ JavaScript
 React
 
 
-- MÓDULO 3: Desenvolvimento Back-end:
+MÓDULO 3: Desenvolvimento Back-end:
 
 Banco de Dados
 Rest
@@ -33,7 +38,7 @@ Segurança
 Deploy
 
 
-- MÓDULO 4: Introdução à Ciência da Computação:
+MÓDULO 4: Introdução à Ciência da Computação:
 
 Algoritmos
 Estrutura de Dados
