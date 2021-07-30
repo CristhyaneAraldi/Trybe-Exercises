@@ -1,5 +1,7 @@
 // BLOCO 8 DIA 2
 // EXERCICIOS
+// array.forEach()
+
 const assert = require('assert');
 
 const books = [
@@ -65,4 +67,19 @@ const books = [
   },
 ];
 
-// Adicione o código do exercício aqui:
+// 2 - Retorne o nome do livro de menor nome.
+function smallerName() {
+  let nameBook;
+  // console.log(!nameBook); // retorna true. 
+  // uma variavel vazia retornaria false, a negação de uma variavel vazia retorna true
+  books.forEach((book) => {
+    if (!nameBook || book.name.length < nameBook.length) { // pq não poderia usar nameBook.length === 0 ?
+      nameBook = book.name;
+    }
+  });
+  // Variável nameBook que receberá o valor do menor nome;
+  return nameBook;
+}
+
+assert.strictEqual(smallerName(), 'Duna');
+

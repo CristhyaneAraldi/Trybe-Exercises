@@ -1,5 +1,7 @@
 // BLOCO 8 DIA 2
 // EXERCICIOS
+// Array.forEach
+
 const assert = require('assert');
 
 const books = [
@@ -65,4 +67,4 @@ const books = [
   },
 ];
 
-// Adicione o código do exercício aqui:
+// 3 - Encontre o primeiro livro cujo nome possui 26 caracteres.
