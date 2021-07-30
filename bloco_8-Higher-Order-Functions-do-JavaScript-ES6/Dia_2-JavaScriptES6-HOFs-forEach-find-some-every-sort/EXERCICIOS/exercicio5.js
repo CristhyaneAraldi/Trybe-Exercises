@@ -1,5 +1,7 @@
 // BLOCO 8 DIA 2
 // EXERCICIOS
+// Array.every();
+
 const assert = require('assert');
 
 const books = [
@@ -65,4 +67,13 @@ const books = [
   },
 ];
 
-// Adicione o código do exercício aqui:
+// 5 - Faça uma função que retorne true , se todas as pessoas autoras nasceram no século XX, ou false , caso contrário.
+const expectedResult = false;
+
+function everyoneWasBornOnSecXX() {
+  return books.every((book) => {
+    (book.author.birthYear >= 1901 && book.author.birthYear <= 2000)
+  })
+}
+
+assert.strictEqual(everyoneWasBornOnSecXX(), expectedResult);
