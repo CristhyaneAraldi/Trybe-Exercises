@@ -1,7 +1,6 @@
-// exercise 5
+// exercise 6
 // array.map()
 // array.filter()
-// array.sort()
 
 const assert = require('assert');
 
@@ -68,19 +67,18 @@ const books = [
   },
 ];
 
-// 5 - Crie um array em ordem alfabética apenas com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
+// 6 - Crie um array com o nome de todos os livros com mais de 60 anos de publicação
 
 const expectedResult = [
-  'Frank Herbert',
-  'George R. R. Martin',
-  'Isaac Asimov',
-  'J. R. R. Tolkien',
+  'O Senhor dos Anéis',
+  'Fundação',
+  'O Chamado de Cthulhu',
 ];
 
-function fantasyOrScienceFictionAuthors() {
-  const genero = ['Fantasia', 'Ficção Científica'];
-  return books.filter((book) => genero.includes(book.genre)).map((book) => book.author.name).sort();
+function oldBooks() {
+  return books.filter((book) => (book.releaseYear < 1961)).map((book) => book.name);
 };
-console.log(fantasyOrScienceFictionAuthors());
 
-assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expectedResult);
+console.log(oldBooks());
+
+assert.deepStrictEqual(oldBooks(), expectedResult);
