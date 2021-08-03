@@ -1,4 +1,4 @@
-// EXERCISE 3
+// EXERCISE 4
 // reduce()
 
 // considere o seguinte array
