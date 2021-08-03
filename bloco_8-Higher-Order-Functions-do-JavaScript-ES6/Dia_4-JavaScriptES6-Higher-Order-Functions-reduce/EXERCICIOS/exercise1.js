@@ -15,5 +15,6 @@ function flatten() {
 };
 
 console.log(flatten());
+// concat cria um novo array unindo todos os elementos que foram passados como parâmetro
 
 assert.deepStrictEqual(flatten(), ['1', '2', '3', true, 4, 5, 6]);
