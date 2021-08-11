@@ -24,9 +24,9 @@ const handleError = (errorReason) =>
 const sendMarsTemperature = ((onSuccess, onError) => {
   const success = getMarsTemperature();
   const error = 'Robot is busy';
-  const sendMessage = Math.random() <= 0.6;
+  const messageSent = Math.random() <= 0.6;
   setTimeout(() => {
-    sendMessage ? onSuccess(success) : onError(error);
+    messageSent ? onSuccess(success) : onError(error);
   }, messageDelay());
 });
 
