@@ -1,0 +1,10 @@
+.item-lista {
+  background-color: rgb(78, 153, 128);
+  color: beige;
+  font-weight: 800;
+  font-style: italic;
+  list-style: none;
+  padding: 10px;
+  margin: 0 20px 0 0;
+}
+
