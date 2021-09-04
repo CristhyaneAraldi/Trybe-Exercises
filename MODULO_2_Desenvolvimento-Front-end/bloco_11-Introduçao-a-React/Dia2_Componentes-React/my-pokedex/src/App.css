@@ -8,11 +8,12 @@ header {
   /* justify-content: space-around; */
   margin-top: 0;
   background-color:rgb(80, 75, 75);
-  padding: 20px;
+  /* padding: 10px; */
   border-bottom: rgb(19, 18, 18) solid 2px;
 }
 
 header .logo {
+  margin-top: 10px;
   height: 70px;
   float: left;
   margin-left: 5%;
@@ -24,6 +25,7 @@ header h1 {
   padding: 0 20% 0 0;
   color: rgba(255, 255, 255, 0.946);
   font-weight: 800;
+  font-size: 2.5em;
 }
 
 .pokedex {
