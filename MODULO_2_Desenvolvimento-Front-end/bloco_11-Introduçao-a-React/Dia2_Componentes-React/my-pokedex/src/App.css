@@ -9,16 +9,43 @@ header {
   margin-top: 0;
   background-color:rgb(80, 75, 75);
   padding: 20px;
-  color: rgb(238, 235, 235);
+  border-bottom: rgb(19, 18, 18) solid 2px;
 }
 
 header .logo {
   height: 70px;
   float: left;
+  margin-left: 5%;
 }
 
 header h1 {
   margin-right: auto;
   margin-left: auto;
-  padding: 0 15% 0 0;
+  padding: 0 20% 0 0;
+  color: rgba(255, 255, 255, 0.946);
+  font-weight: 800;
+}
+
+.pokedex {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 10px;
+}
+
+.pokemon {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* justify-content: space-around; */
+  /* flex: 1 1 0; */
+  min-width: 25%;
+  margin: 10px 10px;
+  border: 5px #0f324119 solid;
+  border-radius: 10px;
+  background-color: #30a8d7aa;
+  color: #131313;
+}
+
+.pokemon:hover {
+  box-shadow: 1px 1px 5px 5px rgb(141, 140, 140);
 }

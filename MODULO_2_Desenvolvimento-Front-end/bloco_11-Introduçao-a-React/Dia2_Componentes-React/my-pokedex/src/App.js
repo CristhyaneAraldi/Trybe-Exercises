@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
 import pokemons from './data';
 import Pokedex from './Components/Pokedex';
 import pokemonLogo from './pokemon.png';
+import './App.css';
 
 class App extends React.Component {
   render() {
@@ -12,10 +12,10 @@ class App extends React.Component {
           <img className='logo' src={ pokemonLogo } alt='Pokemon'/>
           <h1>Pokedex</h1>
         </header>
+        <span className="pokedex">
+          { pokemons.map((pokemon) => <Pokedex pokedex={ pokemon } />)}
+        </span>
         
-        <Pokedex pokedex={pokemons[0]}/>
-        <Pokedex pokedex={pokemons[1]}/>
-  
       </main>
     )
   }
