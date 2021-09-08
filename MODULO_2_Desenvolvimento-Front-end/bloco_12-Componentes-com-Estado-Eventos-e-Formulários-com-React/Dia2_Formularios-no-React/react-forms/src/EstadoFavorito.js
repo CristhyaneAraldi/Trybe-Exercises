@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class EstadoFavorito extends Component {
   render() {
-    const { value, handleChange } = this.props
+    const { value, handleChange } = this.props // A função que altera o estado do componente pai chega ao componente filho via `props`!
 
     return(
       <label>
