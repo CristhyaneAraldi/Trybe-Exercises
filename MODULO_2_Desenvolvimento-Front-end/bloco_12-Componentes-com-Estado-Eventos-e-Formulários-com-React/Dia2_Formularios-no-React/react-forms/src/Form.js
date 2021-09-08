@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import EstadoFavorito from './EstadoFavorito';
 import './Form.css'
 
 class Form extends Component {
@@ -37,14 +38,7 @@ class Form extends Component {
       <div>
         <h1>Estados e React: ferramenta incrível ou reagindo a regionalismos?</h1>
         <form className="form">
-          <label>
-            Diga qual é o seu estado favorito! Do Brasil ou do React, você quem sabe!
-            <textarea 
-              name="estadoFavorito" 
-              value={this.state.estadoFavorito} 
-              onChange={this.handleChange} 
-            />
-          </label>
+          <EstadoFavorito value={this.state.EstadoFavorito} handleChange={this.handleChange} />
 
           <label>
             Email
