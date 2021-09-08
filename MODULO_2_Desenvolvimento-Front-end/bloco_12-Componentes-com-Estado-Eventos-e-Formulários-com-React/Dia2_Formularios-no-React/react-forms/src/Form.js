@@ -5,7 +5,8 @@ class Form extends Component {
   constructor() {
     super()
 
-    this.handleTextAreaChange = this.handleTextAreaChange.bind(this);
+    // this.handleTextAreaChange = this.handleTextAreaChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 
     this.state = { // criando o estado inicial
       estadoFavorito: '',
@@ -16,8 +17,19 @@ class Form extends Component {
       palavraChave: '',
     }
   }
-  handleTextAreaChange(event) {
-    this.setState({ estadoFavorito: event.target.value })
+  // handleTextAreaChange(event) {
+  //   this.setState({ estadoFavorito: event.target.value })
+  // }
+
+  // event handlers genéricos:
+  handleChange({ target }) { // desestrutura 'event.target' já para 'target'
+    const { name } = target // pega name e value de target; name será por exemplo o 'estadoFavorito' e 'value' será o que eu escrevo no input (alterado para constar apenas 'name', ver abaixo:)
+    const value = target.type === 'checkbox' ? target.checked : target.value // para checkbox o bolleano de retorno não fica em 'value', mas sim em 'checkbox'
+
+    this.setState({
+      [name]: value
+    })
+
   }
 
   render() {
@@ -28,34 +40,59 @@ class Form extends Component {
           <label>
             Diga qual é o seu estado favorito! Do Brasil ou do React, você quem sabe!
             <textarea 
-            name="estadoFavorito" 
-            value={this.state.estadoFavorito} 
-            onChange={this.handleTextAreaChange} />
+              name="estadoFavorito" 
+              value={this.state.estadoFavorito} 
+              onChange={this.handleChange} 
+            />
           </label>
 
           <label>
             Email
-            <input name="email" type="email" />
+            <input
+              name="email" 
+              type="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
           </label>
 
           <label>
             Nome
-            <input name="nome" type="text" />
+            <input 
+              name="nome" 
+              type="text"
+              value={this.state.nome}
+              onChange={this.handleChange} 
+            />
           </label>
 
           <label>
             Idade
-            <input name="idade" type="number" />
+            <input 
+              name="idade" 
+              type="number" 
+              value={this.state.idade}
+              onChange={this.handleChange}
+            />
           </label>
 
           <label>
             Vai comparecer à conferência?
-            <input name="vaiComparecer" type="checkbox" />
+            <input 
+              name="vaiComparecer" 
+              type="checkbox" 
+              value={this.state.vaiComparecer}
+              onChange={this.handleChange}
+            />
           </label>
 
           <label>
             Escolha sua palavra chave favorita:
-            <select name="palavraChave">
+            <select 
+              name="palavraChave" 
+              value={this.state.palavraChave}
+              onChange={this.handleChange}
+            >
               <option value="estado">Estado</option>
               <option value="evento">Evento</option>
               <option value="props">Props</option>
