@@ -9,6 +9,7 @@ class Home extends React.Component {
       cocktails: null,
       query: '',
       loading: false,
+      notFound: false,
     }
 
     this.handleInputQuery = this.handleInputQuery.bind(this); 
@@ -37,6 +38,13 @@ class Home extends React.Component {
       fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${query}`)
       .then((response) => response.json())
       .then((result) => {
+        if (!result.drinks) { //if para notFound, pq só quero um comportamento se eu não tiver resposta
+          return this.setState({
+            notFound: true,
+            loading: false,
+            cocktails: false,
+          })
+        }
         this.setState({
           cocktails: result.drinks,
           loading: false,
@@ -47,13 +55,14 @@ class Home extends React.Component {
   }
 
   render() {
-    const { query, loading, cocktails } = this.state; // desconstruindo query para uso no render
-    if (loading) {
-      return <div>Carregando...</div>
-    }
+    const { query, loading, cocktails, notFound } = this.state; // desconstruindo query para uso no render
+    // if (loading) {
+    //   return <div>Carregando...</div>
+    // }
     return (
       <section>
-        <label htmlFor="inputQuery">
+        <form>
+          <label htmlFor="inputQuery">
           Encontre seu cocktail favorito
           <input 
             type="text"
@@ -62,25 +71,33 @@ class Home extends React.Component {
             value={ query } // trago esse query por meio do this.state
             onChange={ this.handleInputQuery }
           />
-        </label>
-        <button
-          type="button"
-          onClick={ this.fetchData }
-        >
-          Pesquisar
-        </button>
-        { cocktails && cocktails.map((cocktail) => { // qdo cocktails entra no render, ainda está null, então só faço map quando cocktails retorna verdadeiro
-          return(
-            <div key={ cocktail.idDrink }>
-            <Link to={ `/details/${cocktail.idDrink}` }>
-              <nav>{ cocktail.strDrink }</nav>
-            </Link>
-            <img src={ cocktail.strDrinkThumb } alt={ cocktail.strDrink } />
-          </div>
-          )          
-        })}
+          </label>
+          <button
+            type="button"
+            onClick={ this.fetchData }
+          >
+            Pesquisar
+          </button>
+        </form>
+        
+        { loading && <div>Carregando...</div> }
+        <div>
+          { cocktails && cocktails.map((cocktail) => { // qdo cocktails entra no render, ainda está null, então só faço map quando cocktails retorna verdadeiro
+            return(
+              <div key={ cocktail.idDrink }>
+                <Link to={ `/details/${cocktail.idDrink}` }>
+                  <nav>{ cocktail.strDrink }</nav>
+                </Link>
+                <img src={ cocktail.strDrinkThumb } alt={ cocktail.strDrink } />
+              </div>
+              // na linha 75 (link) passo o id q irá aparecer na URL
+            )          
+           })}
+        </div>
+        
+        {!loading && notFound && <div>Nenhum cocktail encontrado</div>}
       </section>
-    )
+    );
   }
 }
 
