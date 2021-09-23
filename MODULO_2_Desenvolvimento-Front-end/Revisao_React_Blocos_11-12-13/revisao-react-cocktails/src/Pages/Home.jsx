@@ -60,9 +60,9 @@ class Home extends React.Component {
     //   return <div>Carregando...</div>
     // }
     return (
-      <section>
-        <form>
-          <label htmlFor="inputQuery">
+      <section className="home">
+        <form className="home-form">
+          <label htmlFor="inputQuery" className="form-label">
           Encontre seu cocktail favorito
           <input 
             type="text"
@@ -84,11 +84,11 @@ class Home extends React.Component {
         <div>
           { cocktails && cocktails.map((cocktail) => { // qdo cocktails entra no render, ainda está null, então só faço map quando cocktails retorna verdadeiro
             return(
-              <div key={ cocktail.idDrink }>
+              <div key={ cocktail.idDrink } >
                 <Link to={ `/details/${cocktail.idDrink}` }>
-                  <nav>{ cocktail.strDrink }</nav>
+                  <nav className="drink-name">{ cocktail.strDrink }</nav>
                 </Link>
-                <img src={ cocktail.strDrinkThumb } alt={ cocktail.strDrink } />
+                <img src={ cocktail.strDrinkThumb } alt={ cocktail.strDrink } className="drink-img" />
               </div>
               // na linha 75 (link) passo o id q irá aparecer na URL
             )          
