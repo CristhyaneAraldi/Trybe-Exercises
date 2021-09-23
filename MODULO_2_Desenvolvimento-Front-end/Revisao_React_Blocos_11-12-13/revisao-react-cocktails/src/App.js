@@ -15,3 +15,6 @@ function App() {
 }
 
 export default App;
+
+// Api utilizada:
+// https://www.thecocktaildb.com/api.php
