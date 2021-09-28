@@ -19,7 +19,8 @@ class Details extends React.Component {
 
   fetchData() {
     // const id = this.props.match.params.id
-    const { match: { params: { id }}} = this.props;
+    // usa match sempre que for pegar parâmetro da rota (react router dom provê props por padrão: history, location e match)
+    const { match: { params: { id }}} = this.props; 
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
       .then((response) => response.json())
       .then((response) => {
@@ -32,7 +33,7 @@ class Details extends React.Component {
 
   render() {
     const { cocktail } = this.state;
-    if (!cocktail) return <div>Carregando...</div>;
+    if (!cocktail) return <div>Carregando...</div>; // primeiro cocktail vem como null, só será populado no didMount, ou seja, se cocktail for verdadeiro (not null) ele entra no loading. Senão, ele entra no return
     const { strDrink, strDrinkThumb, strInstructions } = cocktail;
     return (
       <div>
