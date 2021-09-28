@@ -6,14 +6,13 @@ class Home extends React.Component {
     super();
 
     this.state = {
-      cocktails: null,
-      query: '',
-      loading: false,
+      cocktails: null,  // vai receber o valor da API
+      query: '', // query de pesquisa no input
+      loading: false, // começa com false pq chamada de API não será no DidMount (button que chamará a API, e não ao renderizar a página)
       notFound: false,
     }
 
-    this.handleInputQuery = this.handleInputQuery.bind(this); 
-    //como a func acessa o this, preciso fazer o bind
+    this.handleInputQuery = this.handleInputQuery.bind(this); //como a func acessa o this, preciso fazer o bind
     this.fetchData = this.fetchData.bind(this);
   }
 
@@ -24,21 +23,21 @@ class Home extends React.Component {
   // }
   // outra forma de desestruturar:
 
-  handleInputQuery({ target: { name, value }}) {
+  handleInputQuery({ target: { name, value }}) { //responsabilidade dessa função é manipular a query do input (espera receber um event (name traz a propriedade name que eu setei no input e value é o q o usuário digita))
     this.setState({
-      [name]: value, // indo ao objeto e procurando alguém com nome equivalente
-    });
+      [name]: value, // indo ao objeto e procurando alguém com nome equivalente (no caso, name atribuído foi query, igual ao q está no meu estado)
+    }); // esse objeto vai modificar a chave no estado q corresponde ao name e vai jogar value pra dentro dela
   }
 
-  fetchData() {
-    const { query } = this.state;
-    this.setState({
+  fetchData() { // na prática essa função ficaria em arq na pasta services
+    const { query } = this.state; // query será parâmetro de fetch
+    this.setState({ // vai setar estado e segundo param recebe a função de callback
       loading: true,
     }, () => {
       fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${query}`)
       .then((response) => response.json())
       .then((result) => {
-        if (!result.drinks) { //if para notFound, pq só quero um comportamento se eu não tiver resposta
+        if (!result.drinks) { // if para notFound, pq só quero o comportamento posterior se eu não tiver resposta
           return this.setState({
             notFound: true,
             loading: false,
@@ -66,10 +65,10 @@ class Home extends React.Component {
           Encontre seu cocktail favorito
           <input 
             type="text"
-            id="inputQuery"
-            name="query" // mesmo nome que vc der no estado, atribui à propriedade name
-            value={ query } // trago esse query por meio do this.state
-            onChange={ this.handleInputQuery }
+            id="inputQuery" // deve ser igual ao htmlFor e valor único
+            name="query" // mesmo nome que vc der no estado, atribui à propriedade name do input
+            value={ query } // será controlado pelo estado, então tem q receber a query. Trago essa query por meio do this.state, desestruturando
+            onChange={ this.handleInputQuery } // como esse valor será controlado pelo estado
           />
           </label>
           <button
@@ -81,6 +80,8 @@ class Home extends React.Component {
         </form>
         
         { loading && <div>Carregando...</div> }
+        {/* nao posso usar if dentro de jsx */}
+        
         <div>
           { cocktails && cocktails.map((cocktail) => { // qdo cocktails entra no render, ainda está null, então só faço map quando cocktails retorna verdadeiro
             return(
