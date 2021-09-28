@@ -81,7 +81,7 @@ class Home extends React.Component {
         
         { loading && <div>Carregando...</div> }
         {/* nao posso usar if dentro de jsx */}
-        
+
         <div>
           { cocktails && cocktails.map((cocktail) => { // qdo cocktails entra no render, ainda está null, então só faço map quando cocktails retorna verdadeiro
             return(
@@ -97,6 +97,7 @@ class Home extends React.Component {
         </div>
         
         {!loading && notFound && <div>Nenhum cocktail encontrado</div>}
+        {/* ou renderiza o loading, ou o notFound, não os 2 juntos; retorna ultimo && desde que os anteriores sejam true  */}
       </section>
     );
   }
