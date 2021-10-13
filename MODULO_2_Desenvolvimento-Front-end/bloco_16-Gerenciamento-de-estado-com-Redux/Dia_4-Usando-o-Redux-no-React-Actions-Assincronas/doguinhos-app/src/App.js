@@ -25,8 +25,8 @@ const mapStateToProps = (state) => ({
   isFetching: state.isFetching
 });
 
-const maopDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch) => ({
   fetchDog: () => dispatch(fetchDog())
 });
 
-export default connect(mapStateToProps, maopDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
