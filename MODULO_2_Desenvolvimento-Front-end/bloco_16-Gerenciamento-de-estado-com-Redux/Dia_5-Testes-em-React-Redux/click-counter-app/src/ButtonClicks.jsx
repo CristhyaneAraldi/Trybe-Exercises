@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import addClick from './actions';
+
 class ButtonClicks extends React.Component {
   render () {
     return (
