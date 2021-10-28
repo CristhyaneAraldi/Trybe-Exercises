@@ -6,3 +6,5 @@ Este conteúdo faz parte do Bloco 18 - Context API e React Hooks
 Dia 2 - React Hooks - useState e useContext
 Abaixo, você pode acessar o exercícios de fixação
 [Exercise-TryFood](https://github.com/CristhyaneAraldi/exercise-tryfood)
+Exercícios 2 e 3:
+[Exercise-React-Hooks-Reaftoring](https://github.com/CristhyaneAraldi/exercise-react-hooks-refactoring)
