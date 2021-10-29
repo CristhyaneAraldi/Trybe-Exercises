@@ -3,8 +3,10 @@ React Hooks são uma das mais modernas formas de se trabalhar lógicas complexas
 Com React Hooks, fazer componentes complexos é mais simples , mais rápido e fica mais fácil de compartilhar e agrupar suas lógicas.
 ##
 Este conteúdo faz parte do Bloco 18 - Context API e React Hooks
+
 Dia 2 - React Hooks - useState e useContext
-Abaixo, você pode acessar o exercícios de fixação
+
+ - Aqui você pode acessar o exercícios de fixação:
 [Exercise-TryFood](https://github.com/CristhyaneAraldi/exercise-tryfood)
-Exercícios 2 e 3:
+ - Aqui estão disponíveis os exercícios 2 e 3:
 [Exercise-React-Hooks-Reaftoring](https://github.com/CristhyaneAraldi/exercise-react-hooks-refactoring)
