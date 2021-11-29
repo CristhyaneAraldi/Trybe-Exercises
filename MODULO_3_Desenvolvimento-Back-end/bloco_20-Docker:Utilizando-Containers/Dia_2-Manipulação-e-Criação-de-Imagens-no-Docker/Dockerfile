@@ -1,3 +1,3 @@
 FROM chuanwen/cowsay:latest
 ENTRYPOINT [ "/usr/games/cowsay" ]
-CMD [ "It Works!" ]
+CMD [ "It Works! #vqv Trybe!" ]
