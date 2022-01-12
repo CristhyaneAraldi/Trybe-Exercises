@@ -3,6 +3,21 @@ const { expect } = require('chai');
 const { avaliaNumero } = require('./exercise1.js');
 
 describe('Executa a função avaliaNumero', () => {
+  describe('Quando o parâmetro passado não for do tipo "number"', () => {
+    describe('A resposta', () => {
+      it('é uma string', () => {
+        const resposta = avaliaNumero('resposta qualquer');
+        expect(resposta).to.be.a('string');
+      });
+
+      it('é igual a "o valor deve ser um número"', () => {
+        const resposta = avaliaNumero('resposta qualquer');
+        expect(resposta).to.be.equals('o valor deve ser um número');
+      });
+    });
+  });
+
+
   describe('Quando o número passado for maior que 0', () => {
     describe('A resposta', () => {
 
@@ -15,7 +30,6 @@ describe('Executa a função avaliaNumero', () => {
         const resposta = avaliaNumero(10);
         expect(resposta).to.be.equals('positivo');
       });
-
     });
   });
 
@@ -30,7 +44,6 @@ describe('Executa a função avaliaNumero', () => {
         const resposta = avaliaNumero(-2);
         expect(resposta).to.be.equals('negativo');
       });
-
     });
   });
 
@@ -45,7 +58,6 @@ describe('Executa a função avaliaNumero', () => {
         const resposta = avaliaNumero(0);
         expect(resposta).to.be.equals('neutro');
       });
-
     });
   });
 });
