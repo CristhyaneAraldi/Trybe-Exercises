@@ -1,5 +1,7 @@
 const Author = require('../models/Authors');
 
+// Cria uma string com o nome completo da pessoa autora
+
 const getNewAuthor = (authorData) => {
   const { id, firstName, middleName, lastName } = authorData;
 

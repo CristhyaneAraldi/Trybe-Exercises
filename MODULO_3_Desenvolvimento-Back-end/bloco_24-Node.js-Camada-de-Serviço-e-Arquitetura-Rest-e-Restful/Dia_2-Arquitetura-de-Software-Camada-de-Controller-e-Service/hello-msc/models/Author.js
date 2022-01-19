@@ -1,23 +1,21 @@
 
 const connection = require('./connection');
 
-// Cria uma string com o nome completo da pessoa autora
+// const getNewAuthor = (authorData) => {
+// const { id, firstName, middleName, lastName } = authorData;
 
-const getNewAuthor = (authorData) => {
-const { id, firstName, middleName, lastName } = authorData;
+// const fullName = [firstName, middleName, lastName]
+//   .filter((name) => name)
+//   .join(' ');
 
-const fullName = [firstName, middleName, lastName]
-  .filter((name) => name)
-  .join(' ');
-
-return {
-  id,
-  firstName,
-  middleName,
-  lastName,
-  name: fullName,
- };
-};
+// return {
+//   id,
+//   firstName,
+//   middleName,
+//   lastName,
+//   name: fullName,
+//  };
+// };
 
 // Converte o nome dos campos de snake_case para camelCase
 const serialize = (authorData) => authorData.map((item) => getNewAuthor({
@@ -50,25 +48,47 @@ const findById = async (id) => {
   return serialize(authorData)[0];
 };
 
-const isValid = (firstName, middleName, lastName) => {
-    if (!firstName || typeof firstName !== 'string') return false;
-    if (!lastName || typeof lastName !== 'string') return false;
-    if (middleName && typeof middleName !== 'string') return false;
+// const isValid = (firstName, middleName, lastName) => {
+//     if (!firstName || typeof firstName !== 'string') return false;
+//     if (!lastName || typeof lastName !== 'string') return false;
+//     if (middleName && typeof middleName !== 'string') return false;
 
-    return true;
-};
+//     return true;
+// };
 
+// const createAuthor = async (firstName, middleName, lastName) => {
+//   const [author] = await connection.execute(
+//     'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?, ?, ?)',
+//     [firstName, middleName, lastName]
+//   );
+//   return getNewAuthor({ id: author.insertId, firstName, middleName, lastName });
+// }
+
+
+// refatorando função createAuthor
 const createAuthor = async (firstName, middleName, lastName) => {
-  const [author] = await connection.execute(
-    'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?, ?, ?)',
-    [firstName, middleName, lastName]
-  );
-  return getNewAuthor({ id: author.insertId, firstName, middleName, lastName });
-}
+  // const validAuthor = isValid(firstName, middleName, lastName);
+
+  // if (!validAuthor) return false;
+
+  // await Author.createAuthor(firstName, middleName, lastName);
+
+  // return true;
+  const [author] = await Author.createAuthor(firstName, middleName, lastName)
+
+  authorId = author.insertId;
+
+  return getNewAuthor({
+    id: authorId,
+    firstName,
+    middleName,
+    lastName,
+  })
+};
 
 module.exports = {
   getAll,
   findById,
-  isValid,
+  // isValid,
   createAuthor,
 };
