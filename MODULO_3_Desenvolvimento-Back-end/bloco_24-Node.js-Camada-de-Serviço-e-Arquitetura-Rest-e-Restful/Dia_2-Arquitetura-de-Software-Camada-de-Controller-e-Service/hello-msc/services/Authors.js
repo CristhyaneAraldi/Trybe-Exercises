@@ -1,4 +1,4 @@
-const Author = require('../models/Authors');
+const Author = require('../models/Author');
 
 // Cria uma string com o nome completo da pessoa autora
 
@@ -40,7 +40,30 @@ const findById = async (id) => {
   return getNewAuthor(author);
 };
 
+const createAuthor = async (firstName, middleName, lastName) => {
+  const validAuthor = isValid(firstName, middleName, lastName);
+
+  if (!validAuthor) return false;
+
+  // alterando para que retorne o autor criado, nao apenas true:
+
+  // await Author.createAuthor(firstName, middleName, lastName);
+  // return true;
+
+  const [author] = await Author.createAuthor(firstName, middleName, lastName)
+
+  authorId = author.insertId;
+
+  return getNewAuthor({
+    id: authorId,
+    firstName,
+    middleName,
+    lastName,
+  })
+};
+
 module.exports = {
   getAll,
   findById,
+  createAuthor,
 }

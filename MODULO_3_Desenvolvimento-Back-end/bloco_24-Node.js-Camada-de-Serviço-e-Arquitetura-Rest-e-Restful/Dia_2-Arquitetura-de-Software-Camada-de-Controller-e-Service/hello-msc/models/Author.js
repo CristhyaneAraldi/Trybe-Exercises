@@ -56,35 +56,13 @@ const findById = async (id) => {
 //     return true;
 // };
 
-// const createAuthor = async (firstName, middleName, lastName) => {
-//   const [author] = await connection.execute(
-//     'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?, ?, ?)',
-//     [firstName, middleName, lastName]
-//   );
-//   return getNewAuthor({ id: author.insertId, firstName, middleName, lastName });
-// }
-
-
-// refatorando função createAuthor
 const createAuthor = async (firstName, middleName, lastName) => {
-  // const validAuthor = isValid(firstName, middleName, lastName);
-
-  // if (!validAuthor) return false;
-
-  // await Author.createAuthor(firstName, middleName, lastName);
-
-  // return true;
-  const [author] = await Author.createAuthor(firstName, middleName, lastName)
-
-  authorId = author.insertId;
-
-  return getNewAuthor({
-    id: authorId,
-    firstName,
-    middleName,
-    lastName,
-  })
-};
+  const [author] = await connection.execute(
+    'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?, ?, ?)',
+    [firstName, middleName, lastName]
+  );
+  return getNewAuthor({ id: author.insertId, firstName, middleName, lastName });
+}
 
 module.exports = {
   getAll,
