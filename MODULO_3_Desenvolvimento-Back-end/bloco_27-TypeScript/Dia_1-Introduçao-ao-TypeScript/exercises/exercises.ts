@@ -31,3 +31,20 @@ export function square(side: number): number {
 export function rectangle(base: number, height: number): number {
   return base * height;
 }
+
+// exercises part 2:
+
+// Crie uma nova função para calcular a área do losango
+export function losango(diagonalMaior: number, diagonalMenor: number): number {
+  return (diagonalMaior * diagonalMenor) / 2;
+}
+
+// Crie uma nova função para calcular a área do trapézio
+export function trapezio(altura: number, baseMaior: number, baseMenor: number): number {
+  return ((baseMaior + baseMenor) * altura) / 2;
+}
+
+// Crie uma nova função para calcular a área do círculo
+export function circulo(PI: number, raio: number): number {
+  return PI * (raio ** 2);
+}
