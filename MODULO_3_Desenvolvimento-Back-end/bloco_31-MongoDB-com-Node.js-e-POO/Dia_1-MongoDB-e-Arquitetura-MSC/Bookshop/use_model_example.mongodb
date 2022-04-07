@@ -1,0 +1,8 @@
+use model_example
+db.books.insertMany([
+  { title: 'The Dispossessed', author: 'Ursula K. Le Guin', publishedYear: 1974 },
+  { title: 'I Am Legend', author: 'Richard Matheson', publishedYear: 1954, weight: '6.4 ounces'  },
+  { title: 'The Road', author: 'Cormac McCarthy', publishedYear: 2006 },
+  { title: 'Foundation', author: 'Isaac Asimov' },
+  { title: '2001: A Space Odyssey', author: 'Arthur C. Clarke', weight: '5.4 ounces' },
+]);
