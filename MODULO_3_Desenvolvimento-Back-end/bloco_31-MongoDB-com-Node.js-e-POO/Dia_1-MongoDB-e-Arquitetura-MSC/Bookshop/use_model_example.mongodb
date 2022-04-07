@@ -1,4 +1,4 @@
-// use model_example
+use('model_example')
 db.books.insertMany([
   { title: 'The Dispossessed', author: 'Ursula K. Le Guin', publishedYear: 1974 },
   { title: 'I Am Legend', author: 'Richard Matheson', publishedYear: 1954, weight: '6.4 ounces'  },
